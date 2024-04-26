@@ -1,0 +1,32 @@
+// burger.module.scss
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+.menu {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding-left: 40px;
+    padding-top: 90px;
+    width: 250px;
+    height: 100vh;
+    background-color: #000000;
+    transform: translateX(100%);
+    transition: all 0.3s ease-in-out;
+    a{
+        text-decoration: none;
+        font-family: "Jost", sans-serif;
+        color: white;
+        transition: all 0.3s ease-in-out;
+    }
+    :hover {
+        color: rgb(255, 47, 99);
+    }
+}
+
+.open {
+    transform: translateX(0); 
+    // mix-blend-mode: difference;
+    background-color: black;
+}

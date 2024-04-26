@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -13,17 +15,17 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+    --light: #fbf7ee;
+    --dark: #303247;
+    --primary: #ffc87a;
+    --secondary: #556f7a;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: rgb(var(--secondary));
+  background: white;
+    margin: 0;
 }
 
 @layer utilities {
@@ -31,3 +33,5 @@ body {
     text-wrap: balance;
   }
 }
+
+
