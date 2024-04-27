@@ -73,13 +73,14 @@ export const Cursor = ({ stickyElement }) => {
     }
 
     useEffect(() => {
+        const stickyElementRef = stickyElement.current;
         window.addEventListener('mousemove', manageMouseMove)
         stickyElement.current.addEventListener('mouseover', manageMouseOver)
         stickyElement.current.addEventListener('mouseleave', manageMouseOut)
         return () => {
             window.removeEventListener('mousemove', manageMouseMove)
-            stickyElement.current.removeEventListener('mousemove', manageMouseOver)
-            stickyElement.current.removeEventListener('mouseleave', manageMouseOut)
+            stickyElementRef.removeEventListener('mousemove', manageMouseOver)
+            stickyElementRef.removeEventListener('mouseleave', manageMouseOut)
         }
     })
 
