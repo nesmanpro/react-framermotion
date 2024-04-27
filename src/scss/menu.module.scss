@@ -1,4 +1,4 @@
-// burger.module.scss
+
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
 
@@ -21,12 +21,13 @@
         transition: all 0.3s ease-in-out;
     }
     :hover {
-        color: rgb(255, 47, 99);
+        color: rgb(122, 122, 122);
+        // cursor: none;
     }
 }
 
 .open {
     transform: translateX(0); 
-    // mix-blend-mode: difference;
+    mix-blend-mode: color;
     background-color: black;
 }

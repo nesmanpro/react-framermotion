@@ -7,6 +7,8 @@ import Lenis from 'lenis'
 import useDimention from "@/lib/useDimension";
 import { NavBar } from "@/components/navBar";
 import { Cursor } from "@/components/cursor";
+import Header from "@/components/header";
+
 
 
 const imgs = [
@@ -61,6 +63,7 @@ export default function Home() {
       <Cursor stickyElement={stickyElement} />
       <NavBar ref={stickyElement} />
       <div className={style.spacer}>
+        <Header />
       </div>
       <div className={style.gallery}>
         <Column imgs={[imgs[0], imgs[1], imgs[2]]} y={y} />

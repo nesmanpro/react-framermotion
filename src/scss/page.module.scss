@@ -43,8 +43,9 @@
 }
 
 .spacer{
-    mix-blend-mode: difference;
-    background-color: black;
+    // mix-blend-mode: difference;
+    overflow: hidden;
+    background-color: white;
     height: 100vh;
     z-index: -9;
 }
