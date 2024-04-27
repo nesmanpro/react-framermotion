@@ -5,7 +5,7 @@ import { forwardRef } from 'react';
 import Magnetic from '@/components/magnetic';
 
 
-export const NavBar = forwardRef(function index(props, ref) {
+export const NavBar = forwardRef(function Index(props, ref) {
 
     const [menuOpen, setMenuOpen] = useState(false);
 
