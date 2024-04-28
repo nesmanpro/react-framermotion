@@ -9,6 +9,9 @@ export default function Header() {
 
     return (
         <div>
+            <div className={style.mouseIcon}>
+                <div className={style.scrollWheel}></div>
+            </div>
             <div className={style.title}>
                 <div
                     className="absolute inset-x-0 transform-gpu overflow-hidden blur-3xl"
@@ -31,7 +34,12 @@ export default function Header() {
                 </div>
                 <h1 className='select-none'>Welcome to my new portfolio</h1>
                 <a href="#" className='absolute mt-6 py-2 px-6 rounded-3xl bg-black text-white text-lg cursor-pointer z-20 border-2 border-black hover:bg-transparent hover:text-black'><button className=''>see more</button></a>
+
+
             </div>
+
+
+
             <Spline scene="https://draft.spline.design/O0aokKzt-d4PqSpZ/scene.splinecode" />
         </div>
     );
