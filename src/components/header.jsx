@@ -40,7 +40,7 @@ export default function Header() {
 
 
 
-            <Spline scene="https://draft.spline.design/O0aokKzt-d4PqSpZ/scene.splinecode" />
+            {/* <Spline scene="https://draft.spline.design/O0aokKzt-d4PqSpZ/scene.splinecode" /> */}
         </div>
     );
 }
