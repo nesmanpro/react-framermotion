@@ -14,7 +14,7 @@ export default function Header() {
             </div>
             <div className={style.title}>
                 <div
-                    className="absolute inset-x-0 transform-gpu overflow-hidden blur-3xl"
+                    className="absolute inset-x-0 -z-2 transform-gpu overflow-hidden blur-3xl"
                     aria-hidden="true"
                 >
                     <div
@@ -32,15 +32,15 @@ export default function Header() {
                         }}
                     />
                 </div>
-                <h1 className='select-none'>Welcome to my new portfolio</h1>
-                <a href="#" className='absolute mt-6 py-2 px-6 rounded-3xl bg-black text-white text-lg cursor-pointer z-20 border-2 border-black hover:bg-transparent hover:text-black'><button className=''>see more</button></a>
+                <h1 className='relative select-none z-10'>Welcome to my new portfolio</h1>
+                <a href="#" className='absolute mt-6 py-2 px-6 rounded-3xl bg-black text-white text-lg cursor-pointer z-20 border-2 border-black hover:bg-transparent hover:text-black'><button className='z-1'>see more</button></a>
 
 
             </div>
 
 
 
-            {/* <Spline scene="https://draft.spline.design/O0aokKzt-d4PqSpZ/scene.splinecode" /> */}
+            <Spline className='absolute -z-8' scene="https://prod.spline.design/hniMIwjOAGhbVzzW/scene.splinecode" />
         </div>
     );
 }
