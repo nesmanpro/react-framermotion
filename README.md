@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Proyecto de Animaciones y Parallax con React y Next.js
 
-## Getting Started
+Este proyecto demuestra el uso avanzado de animaciones y efectos de parallax utilizando React, Next.js, SASS, Framer Motion, Spline y Lenis. La aplicación incluye una navegación interactiva con un cursor magnético, smooth scrolling y animaciones reactivas a la interacción del usuario.
 
-First, run the development server:
+[![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)]()
+[![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)]()
+[![ReactJS](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)]()
+[![SASS](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)]()
+[![NextJS](https://img.shields.io/badge/next%20js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)]()
+[![FramerMotion](https://img.shields.io/badge/Framer%20Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)]()
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Tecnologías Utilizadas
+
+- **React**: Librería para construir interfaces de usuario.
+- **Next.js**: Framework para aplicaciones React con renderizado del lado del servidor.
+- **SASS**: Preprocesador CSS para estilos modulables y mantenibles.
+- **Framer Motion**: Librería de animaciones para React.
+- **Spline**: Herramienta para crear y renderizar modelos 3D interactivos.
+- **Lenis**: Herramienta para smooth scrolling.
+
+![Interactive 3D Slider Section Demo](./public/img/framerparallax.webp)
+
+## Características del Proyecto
+
+- **Animaciones de Parallax y Cursor Magnético**: Implementadas con Framer Motion.
+- **Smooth Scrolling**: Proporcionado por Lenis.
+- **Animaciones y Reactividad de Objetos**: Logradas mediante Spline.
+- **Diseño Modular y Estilizado**: Gracias a SASS.
+
+## Estructura del Proyecto
+
+- `components`: Contiene componentes reutilizables como Header, NavBar, Cursor, etc.
+- `pages`: Contiene las páginas del proyecto.
+- `scss`: Contiene los archivos de estilos.
+- `lib`: Incluye hooks personalizados como `useDimension`.
+
+# Código Ejemplo
+
+A continuación se muestra un ejemplo del componente que maneja el cursor magnético:
+
+```javascript
+import { useRef, useState } from "react";
+import { motion } from "framer-motion";
+
+export default function Framer({ children }) {
+  const ref = useRef(null);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  const handleMouse = (e) => {
+    const { clientX, clientY } = e;
+    const { height, width, left, top } = ref.current.getBoundingClientRect();
+    const middleX = clientX - (left + width / 2);
+    const middleY = clientY - (top + height / 2);
+    setPosition({ x: middleX * 0.1, y: middleY * 0.1 });
+  };
+
+  const reset = () => {
+    setPosition({ x: 0, y: 0 });
+  };
+
+  const { x, y } = position;
+  return (
+    <motion.div
+      style={{ position: "relative" }}
+      ref={ref}
+      onMouseMove={handleMouse}
+      onMouseLeave={reset}
+      animate={{ x, y }}
+      transition={{ type: "spring", stiffness: 350, damping: 5, mass: 0.5 }}
+    >
+      {children}
+    </motion.div>
+  );
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+¡Gracias por visitar este repositorio!
