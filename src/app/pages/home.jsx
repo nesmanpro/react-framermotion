@@ -36,10 +36,10 @@ export default function Home() {
         offset: ['start end', 'end start']
     });
 
-    const y = useTransform(scrollYProgress, [0, 1], [0, height * 2])
-    const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 3.3])
+    const y = useTransform(scrollYProgress, [0, 1], [0, height * 1.5])
+    const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 3])
     const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.25])
-    const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 3])
+    const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 2.3])
 
 
 
@@ -54,7 +54,7 @@ export default function Home() {
                 <Column imgs={[imgs[6], imgs[7], imgs[8]]} y={y3} />
                 <Column imgs={[imgs[9], imgs[10], imgs[11]]} y={y4} />
             </div>
-            <div className={style.spacer}></div>
+            {/* <div className={style.spacer}></div> */}
         </main>
     );
 }
